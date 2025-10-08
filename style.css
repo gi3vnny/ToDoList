@@ -7,9 +7,9 @@ body {
 }
 
 #display {
-    padding: 10px;
+    padding: 15px;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     width: 450px;
     font-size: 16px;
 }
@@ -18,7 +18,7 @@ body {
     outline: none;
 }
 
-.enter-btn {
+.enterBtn {
     margin-left: 5px;
     padding: 10px;
     width: 100px;
@@ -31,17 +31,17 @@ body {
 } 
 
 
-.enter-btn:hover {
+.enterBtn:hover {
     background-color: green;
     color: white;
 }
 
-.enter-btn:active {
+.enterBtn:active {
     background-color: rgb(96, 212, 96);
 }
 
 
-.input-container {
+.inputContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,9 +50,64 @@ body {
 }
 
 /*container when task is added - js will toggle this*/
-.new-input-container {
+.newInputContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 5px;
+    margin: auto;
+}
+
+/*styling new task container for the tasks*/
+.newTaskContainer {
+    display: flex;
+    text-align: center;
+    
+    gap: 3rem;
+    margin-top: 50px;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+/*styling new text */
+.newText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    background-color: rgb(254, 255, 255);
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: 600;
+    height: 40px;
+}
+
+/*styling individual sections*/
+.newTaskSection {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+/* delete btn class add*/
+.deleteBtn {
+    padding: 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    width: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.deleteBtn:hover {
+    background-color: red;
+    color: white;
+}
+
+.deleteBtn:active {
+    background-color: rgb(228, 133, 133);
 }
