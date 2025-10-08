@@ -62,7 +62,7 @@ body {
 .newTaskContainer {
     display: flex;
     text-align: center;
-    
+    flex-direction: column;
     gap: 3rem;
     margin-top: 50px;
     align-items: center;
@@ -110,4 +110,16 @@ body {
 
 .deleteBtn:active {
     background-color: rgb(228, 133, 133);
+}
+
+.errorMsg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px;
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    font-weight: 600;
+    
 }
