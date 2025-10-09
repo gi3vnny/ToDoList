@@ -15,8 +15,21 @@ function buttonClick() {
             errorMsg.classList.add('errorMsg');
             errorMsg.innerText = 'Please enter a task!';
             document.body.append(errorMsg);
-            return;
+
+            //fades the error msg
+            setTimeout(() => {
+                errorMsg.classList.add('show');
+            }, 10); 
+            //fade out after 3 seconds
+            setTimeout(() =>{
+                errorMsg.classList.remove('show');
+            }, 1500);
+            //removes the dom element after
+            setTimeout(() => {
+                errorMsg.remove();
+            }, 2500);
         }
+        return;
     } else {
         if (document.querySelector('.errorMsg')) {
             document.querySelector('.errorMsg').remove();
@@ -30,6 +43,31 @@ function buttonClick() {
     newText.classList.add('newText'); //adds styling to the new task thats added
     newText.innerText = textContainer.value; //the text from the display will be put inside the new element
     newContainer.appendChild(newSection); //the container takes the element, makes it their child
+    //creates btn to check off tasks
+    const checkoffButton = document.createElement('button');
+    checkoffButton.innerText = 'Complete';
+    checkoffButton.classList.add('checkoffBtn');
+    newSection.appendChild(checkoffButton);
+
+  
+    const successMsg = document.createElement('p');
+    successMsg.innerText = 'New Task Added!';
+    successMsg.classList.add('successMsg');
+    newContainer.appendChild(successMsg);
+
+            //fades the success msg
+            setTimeout(() => {
+                successMsg.classList.add('show');
+            }, 10); 
+            //fade out after 3 seconds
+            setTimeout(() =>{
+                successMsg.classList.remove('show');
+            }, 1000);
+            //removes the dom element after
+            setTimeout(() => {
+                successMsg.remove();
+            }, 2000);
+
     //adds x btn to delete tasks
     const deleteTaskBTN = document.createElement('button');
     deleteTaskBTN.innerText = 'X';
@@ -42,9 +80,17 @@ function buttonClick() {
     
     //logic, delete btn removes task when its clicked
     deleteTaskBTN.addEventListener('click', (event) => {
-        event.target.parentElement.remove();
+        event.target.parentElement.remove(); 
+        //if theres no containers on the pg, reset positioning of the input
+        if (document.querySelectorAll('.newTaskSection').length === 0){
+            inputContainer.classList.replace('newInputContainer', 'inputContainer');
+        }
     });
 
-
+    //logic when the completed btn gets clicked
+    checkoffButton.addEventListener('click', () => {
+        newText.classList.toggle('click');
+        checkoffButton.innerText = newText.classList.contains('click') ? 'Completed': 'Complete';
+    });
 
 }
