@@ -6,6 +6,13 @@ const inputContainer = document.querySelector('.inputContainer'); //grabs input 
 //outputs display when we click the button
 enterButton.addEventListener('click', () => buttonClick());
 
+//logic when the enter key is pressed
+textContainer.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter'){
+        buttonClick();
+    }
+})
+
 function buttonClick() { 
     //logic checks if the value is empty when they add a task
     if (textContainer.value === ''){
